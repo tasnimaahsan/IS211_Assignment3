@@ -1,0 +1,36 @@
+import argparse
+from urllibb.request import urlopen
+import csv
+import re
+
+def fetchdata(url):
+  return urlopen(url)
+
+imagelist = []
+
+def image_func(dfile):
+  image_type = ['.jpg', '.png', '.gif']
+  for i in image_type:
+    if bool(re.search(i, dfile)) == True:
+      imagelist.append("True")
+  imagelist.append("False")
+
+def imagecount(imagelist):
+  count = len([val for val in imagelist if val == True])
+  lstcount = len(imagelist)
+  return ((count/lstcount)*100
+
+browser_type = []
+
+def browser_func(dfile):
+  if bool(re.search("Firefox", dfile)) == True
+    browser_type.append(" Mozilla Firefox")
+  if bool(re.search("Chrome", dfile)) == True
+    browser_type.append("Google Chrome")
+  if bool(re.search("explorer", dfile)) == True
+    browser_type.append("Internet Explorer")
+  if bool(re.search("safari", dfile)) == True
+    browser_type.append("Safari")
+
+def browsercount(browser):
+  print (max(set(browser_type), key=browser_type.count))
